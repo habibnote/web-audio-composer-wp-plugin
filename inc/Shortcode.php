@@ -4,7 +4,11 @@ namespace WAC\Inc;
 
 class Shortcode{
 
-    function __construct(){
+    public $slug;
+
+    function __construct( $url ){
+
+        $this->slug = $url;
 
         add_shortcode( 'wac_composer', [$this, 'wac_shortcode'] );
     }
@@ -136,7 +140,7 @@ class Shortcode{
                 <div id="workspace">
                     <canvas id="mainStage"></canvas>
                 </div>
-                <audio id="music" src="http://localhost:10024/wp-content/uploads/2023/11/music.mp3" loop></audio>
+                <audio id="music" src="<?php echo $this->slug . '/assets/audio/music.mp3' ?>" loop></audio>
             </div>
         </div>
        <?php 

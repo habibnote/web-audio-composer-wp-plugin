@@ -28,8 +28,17 @@ final class WAC {
 
     function __construct() {
 
+        $this->define();
+
         //load all hooks
         $this->hooks();
+    }
+
+    /**
+     * All constant
+     */
+    public function define() {
+        define( 'PLUGIN_URL', plugins_url('/', __FILE__) );
     }
 
     /**
@@ -41,7 +50,7 @@ final class WAC {
         add_action( 'wp_enqueue_scripts', [$this, 'load_front_assets'] );
         add_action( 'wp admin_enqueue_scripts', [$this, 'load_admin_enqueue_script'] );
 
-        new Inc\Shortcode();
+        new Inc\Shortcode( PLUGIN_URL );
     }
 
     /**

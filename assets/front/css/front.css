@@ -1,5 +1,5 @@
 .html {
-    height: 100%;
+    height: 100vh;
     background-color: #434343;
     background-image:linear-gradient(#434343, #282828)
 }
@@ -7,7 +7,7 @@
 .body {
     margin: 0;
     overflow: hidden;
-    height: 100%;
+    height: 100vh;
     font-family: 'Open Sans', sans-serif;
 }
 
